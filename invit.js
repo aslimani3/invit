@@ -79,44 +79,23 @@ function dodgeNoButton() {
 }
 
 /* ============================================================
-   BOUTON "OUI" — confettis + message de confirmation
+   BOUTON "OUI" — confettis + redirection vers prep.html
    ============================================================ */
 yesBtn.addEventListener('click', () => {
   launchConfetti();
   yesBtn.disabled = true;
   noBtn.style.visibility = 'hidden';
-  successMessage.hidden = false;
-});
-
-function launchConfetti() {
-  const colors = ['#C9A24B', '#D9A88F', '#7A2C3E', '#C48A94'];
-  const pieceCount = 40;
-
-  for (let i = 0; i < pieceCount; i++) {
-    const piece = document.createElement('span');
-    piece.className = 'confetti-piece';
-
-    // Position de départ aléatoire en haut de la carte
-    piece.style.left = `${Math.random() * 100}%`;
-    piece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-
-    // Chaque confetti tombe à une vitesse et avec un délai légèrement différents
-    const duration = 1.4 + Math.random() * 1.2;
-    const delay = Math.random() * 0.3;
-    piece.style.animationDuration = `${duration}s`;
-    piece.style.animationDelay = `${delay}s`;
-
-    // Certains confettis sont ronds plutôt que carrés, pour varier
-    if (Math.random() > 0.5) {
-      piece.style.borderRadius = '50%';
-    }
-
-    confettiLayer.appendChild(piece);
-
-    // Nettoyage : on retire l'élément du DOM une fois l'animation terminée
-    piece.addEventListener('animationend', () => piece.remove());
+  
+  if (successMessage) {
+    successMessage.hidden = false;
   }
-}
+
+  // Redirection explicite dans le même dossier du repo
+  setTimeout(() => {
+    window.location.href = './prep.html';
+  }, 1200);
+});
+    
 
 /* ============================================================
    COMPTEUR DE JOURS AVANT L'ANNIVERSAIRE
