@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Une invitation pour toi</title>
+  <link rel="stylesheet" href="invit.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       SCÈNE 1 : L'ENVELOPPE
+       Écran d'accueil. L'utilisateur clique sur le cœur pour
+       déclencher l'ouverture (voir script.js -> openEnvelope()).
+  ============================================================ -->
+  <section id="envelope-stage" class="stage" aria-label="Enveloppe à ouvrir">
+    <div class="envelope-wrapper">
+
+      <div class="envelope" id="envelope">
+        <!-- Rabat de l'enveloppe (triangle du haut) -->
+        <div class="envelope__flap"></div>
+        <!-- Corps de l'enveloppe -->
+        <div class="envelope__body"></div>
+        <!-- Bouton cœur central, seul élément cliquable -->
+        <button class="heart-btn" id="heartBtn" aria-label="Ouvrir la lettre">
+          <svg viewBox="0 0 32 29" class="heart-icon" aria-hidden="true">
+            <path d="M16 28.5C16 28.5 1.5 19.7 1.5 9.9 1.5 4.9 5.4 1 10.3 1c3 0 5.4 1.5 6.7 3.8C18.3 2.5 20.7 1 23.7 1 28.6 1 32.5 4.9 32.5 9.9 32.5 19.7 16 28.5 16 28.5Z" transform="translate(-1)"/>
+          </svg>
+        </button>
+      </div>
+
+      <p class="hint-text" id="hintText">Touche la lettre</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SCÈNE 2 : LA CARTE D'INVITATION
+       Masquée au départ (voir CSS .stage--hidden / .stage--visible),
+       révélée par script.js après l'animation d'ouverture.
+  ============================================================ -->
+  <section id="card-stage" class="stage stage--hidden" aria-label="Carte d'invitation">
+    <div class="card" id="card">
+
+      
+
+      <p class="card__eyebrow">Pour toi, ma chérie</p>
+
+      <h1 class="card__question">
+        Ça te dit un date avec moi<br>pour ton anniversaire&nbsp;?
+      </h1>
+
+      
+
+      <div class="card__actions" id="cardActions">
+        <button class="btn btn--yes" id="yesBtn">Oui</button>
+        <button class="btn btn--no" id="noBtn">Non</button>
+      </div>
+
+      <!-- Zone où les confettis dorés/roses sont générés dynamiquement -->
+      <div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+
+      <!-- Message affiché après le clic sur "Oui" -->
+      <p class="card__success" id="successMessage" hidden>C'est noté, mon amour. 💌</p>
+    </div>
+
+    <p class="footer-text">J'ai hâte de fêter ça avec toi.</p>
+  </section>
+
+  <script src="invit.js"></script>
+</body>
+</html>
