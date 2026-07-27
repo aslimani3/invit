@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Préparation au Date 💖</title>
+  <link rel="stylesheet" href="invit.css">
+  <style>
+    /* Ajustements CSS spécifiques à la page de préparation */
+    .prep-stage {
+      overflow-y: auto;
+      padding: 30px 15px;
+      align-items: flex-start;
+    }
+
+    .prep-card {
+      width: min(480px, 92vw);
+      margin: auto;
+      text-align: left;
+    }
+
+    .prep-title {
+      font-size: 22px;
+      color: var(--bordeaux-deep);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .prep-subtitle {
+      font-size: 14px;
+      color: var(--old-rose-dark);
+      text-align: center;
+      font-style: italic;
+      margin-bottom: 24px;
+    }
+
+    .prep-section {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px dashed var(--rose-gold);
+    }
+
+    .prep-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .prep-section-title {
+      font-size: 16px;
+      color: var(--bordeaux);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .prep-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .prep-list li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+
+    .prep-list li::before {
+      content: "✦";
+      position: absolute;
+      left: 8px;
+      color: var(--gold);
+    }
+
+    .back-btn-wrapper {
+      text-align: center;
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="stage prep-stage stage--visible" aria-label="Instructions et préparation au date">
+    <div class="card prep-card">
+
+      <p class="card__eyebrow" style="text-align: center;">Programme Secret</p>
+      <h1 class="prep-title">Comment te préparer pour notre Date 💌</h1>
+      <p class="prep-subtitle">Tout ce que tu dois savoir pour laisser faire la magie...</p>
+
+      <!-- Section 1 : À faire avant -->
+      <div class="prep-section">
+        <h2 class="prep-section-title">
+          <span>✨</span> À faire avant le départ
+        </h2>
+        <ul class="prep-list">
+          <li>Bloque ton calendrier pour la journée.</li>
+          <li>Prépare tes beaux yeux et ton beau sourire.</li>
+          <li>Sois prête à l'heure convenue, je m'occupe du reste.</li>
+        </ul>
+      </div>
+
+      <!-- Section 2 : Quoi porter -->
+      <div class="prep-section">
+        <h2 class="prep-section-title">
+          <span>👗</span> Quoi porter ?
+        </h2>
+        <ul class="prep-list">
+          <li><strong>Style :</strong> Une belle robe si la temperature nous le permet</li>
+          <li><strong>Accessoire indispensable :</strong> Ton plus beau sourire.</li>
+        </ul>
+      </div>
+
+      <!-- Section 3 : Ce qu'il faut apporter -->
+      <div class="prep-section">
+        <h2 class="prep-section-title">
+          <span>🎒</span> Dans ton sac
+        </h2>
+        <ul class="prep-list">
+          <li>Ta bonne humeur habituelle.</li>
+          <li>Rien d'autre, je m'occupe de tout !</li>
+        </ul>
+      </div>
+
+      <div class="back-btn-wrapper">
+        <button class="btn btn--yes" id="confirmBtn">C'est prêt ! Hâte d'y être 💖</button>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="prep.js"></script>
+</body>
+</html>
